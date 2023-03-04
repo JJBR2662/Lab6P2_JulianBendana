@@ -20,6 +20,7 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
+    int copiai = 0;
     AdministrarUsuario adminuser = new AdministrarUsuario("./usuarios.txt");
 
     ArrayList<Usuario> usuarios = new ArrayList();
@@ -73,12 +74,49 @@ public class Main extends javax.swing.JFrame {
         jt_lanzas = new javax.swing.JTree();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        nombreuserart = new javax.swing.JTextField();
+        edadart = new javax.swing.JTextField();
+        nombreart = new javax.swing.JTextField();
+        contraart = new javax.swing.JPasswordField();
+        jButton4 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jf_clienteinicio = new javax.swing.JFrame();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        contraoy = new javax.swing.JPasswordField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        edadoy = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        nombreuseroy = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        mod = new javax.swing.JDialog();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        contranueva = new javax.swing.JPasswordField();
+        nombrenuvo = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        edadnueva = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -292,7 +330,11 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jf_artistinicio.setSize(new java.awt.Dimension(566, 425));
+        jf_artistinicio.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jf_artistinicio.setPreferredSize(new java.awt.Dimension(814, 600));
+        jf_artistinicio.setSize(new java.awt.Dimension(814, 600));
+
+        jPanel5.setPreferredSize(new java.awt.Dimension(814, 600));
 
         jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
         jTabbedPane1.setForeground(new java.awt.Color(51, 255, 0));
@@ -313,7 +355,7 @@ public class Main extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(167, Short.MAX_VALUE)
+                .addContainerGap(415, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(158, 158, 158))
         );
@@ -322,7 +364,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Inicio", jPanel6);
@@ -333,11 +375,11 @@ public class Main extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGap(0, 814, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Mis PlayLists", jPanel7);
@@ -348,14 +390,77 @@ public class Main extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGap(0, 814, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("PlayLists Publicas", jPanel8);
+
+        jPanel13.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel14.setText("Nombre de Usuario:");
+        jPanel13.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 50));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel15.setText("Nombre Artistico:");
+        jPanel13.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 106, 50));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel16.setText("Contraseña:");
+        jPanel13.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 106, 50));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel17.setText("Edad:");
+        jPanel13.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 106, 50));
+
+        nombreuserart.setEditable(false);
+        jPanel13.add(nombreuserart, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 140, 30));
+
+        edadart.setEditable(false);
+        jPanel13.add(edadart, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 140, 30));
+
+        nombreart.setEditable(false);
+        jPanel13.add(nombreart, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 140, 30));
+
+        contraart.setEditable(false);
+        jPanel13.add(contraart, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 140, 30));
+
+        jButton4.setBackground(new java.awt.Color(51, 255, 255));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton4.setText("Cerrar Sesion");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        jPanel13.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 350, 40));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bayern.png"))); // NOI18N
+        jPanel13.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 390, 420));
+
+        jTextArea1.setBackground(new java.awt.Color(51, 0, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Si el Bayern pasa de ronda \nme das un puntito extra\nhacelo por el futbo ly por que ocupo \npasar, confio en mi equipo y se va a \nviolar al Paris Saint Dinero");
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jPanel13.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
+
+        jTabbedPane1.addTab("Perfil", jPanel13);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -383,6 +488,12 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jf_clienteinicio.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jf_clienteinicio.setPreferredSize(new java.awt.Dimension(814, 600));
+        jf_clienteinicio.setSize(new java.awt.Dimension(814, 600));
+
+        jPanel9.setPreferredSize(new java.awt.Dimension(814, 600));
+
         jTabbedPane2.setBackground(new java.awt.Color(0, 0, 0));
         jTabbedPane2.setForeground(new java.awt.Color(51, 255, 0));
 
@@ -392,11 +503,11 @@ public class Main extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
+            .addGap(0, 814, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Inicio", jPanel10);
@@ -407,11 +518,11 @@ public class Main extends javax.swing.JFrame {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
+            .addGap(0, 814, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Mis Playlists", jPanel11);
@@ -422,14 +533,99 @@ public class Main extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
+            .addGap(0, 814, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Playlists publicas", jPanel12);
+
+        jPanel14.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton5.setBackground(new java.awt.Color(255, 0, 0));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton5.setText("Borrar Perfil");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jPanel14.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 140, 40));
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bayern.png"))); // NOI18N
+        jPanel14.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 390, 420));
+
+        jTextArea2.setBackground(new java.awt.Color(51, 0, 255));
+        jTextArea2.setColumns(20);
+        jTextArea2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Si el Bayern pasa de ronda \nme das un puntito extra\nhacelo por el futbo ly por que ocupo \npasar, confio en mi equipo y se va a \nviolar al Paris Saint Dinero");
+        jScrollPane3.setViewportView(jTextArea2);
+
+        jPanel14.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
+
+        contraoy.setEditable(false);
+        jPanel14.add(contraoy, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 140, 30));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel20.setText("Contraseña:");
+        jPanel14.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 106, 50));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel21.setText("Edad:");
+        jPanel14.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 106, 50));
+
+        edadoy.setEditable(false);
+        jPanel14.add(edadoy, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 140, 30));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("PERFIL");
+        jPanel14.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 210, 80));
+
+        nombreuseroy.setEditable(false);
+        nombreuseroy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreuseroyActionPerformed(evt);
+            }
+        });
+        jPanel14.add(nombreuseroy, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 140, 30));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel23.setText("Nombre de Usuario:");
+        jPanel14.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 50));
+
+        jButton6.setBackground(new java.awt.Color(51, 255, 255));
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton6.setText("Cerrar Sesion");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+        jPanel14.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 210, 40));
+
+        jButton7.setBackground(new java.awt.Color(51, 255, 0));
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton7.setText("Modificar");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+        jPanel14.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 210, 40));
+
+        jTabbedPane2.addTab("Perfil", jPanel14);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -446,16 +642,83 @@ public class Main extends javax.swing.JFrame {
         jf_clienteinicio.getContentPane().setLayout(jf_clienteinicioLayout);
         jf_clienteinicioLayout.setHorizontalGroup(
             jf_clienteinicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_clienteinicioLayout.createSequentialGroup()
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 300, Short.MAX_VALUE))
+            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jf_clienteinicioLayout.setVerticalGroup(
             jf_clienteinicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jf_clienteinicioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        mod.setPreferredSize(new java.awt.Dimension(493, 394));
+        mod.setSize(new java.awt.Dimension(493, 394));
+
+        jPanel15.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel15.setPreferredSize(new java.awt.Dimension(493, 394));
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 0, 204));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel24.setText("Edad:");
+        jPanel15.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 106, 50));
+
+        contranueva.setBackground(new java.awt.Color(255, 0, 204));
+        contranueva.setForeground(new java.awt.Color(51, 255, 255));
+        jPanel15.add(contranueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 140, 30));
+
+        nombrenuvo.setBackground(new java.awt.Color(255, 0, 204));
+        nombrenuvo.setForeground(new java.awt.Color(51, 255, 255));
+        nombrenuvo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombrenuvoActionPerformed(evt);
+            }
+        });
+        jPanel15.add(nombrenuvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 140, 30));
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 0, 204));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel25.setText("Nombre de Usuario:");
+        jPanel15.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, 50));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 0, 204));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel26.setText("Contraseña:");
+        jPanel15.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 106, 50));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("Modifiquemos WOW");
+        jPanel15.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 40, 270, 40));
+
+        jButton8.setBackground(new java.awt.Color(255, 0, 204));
+        jButton8.setText("Modificar");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+        jPanel15.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 120, 40));
+
+        edadnueva.setValue(12);
+        jPanel15.add(edadnueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 140, 30));
+
+        javax.swing.GroupLayout modLayout = new javax.swing.GroupLayout(mod.getContentPane());
+        mod.getContentPane().setLayout(modLayout);
+        modLayout.setHorizontalGroup(
+            modLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modLayout.createSequentialGroup()
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        modLayout.setVerticalGroup(
+            modLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modLayout.createSequentialGroup()
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -547,12 +810,18 @@ public class Main extends javax.swing.JFrame {
             }
             if (puede2) {
                 usuarios.add(new Artista(jt_nombreArtistico.getText(), jt_usernuevoartista.getText(), jp_nuevaclaveartista.getText(), (Integer) js_edadnuevoartista.getValue()));
+                adminuser.getListausers().add(new Artista(jt_nombreArtistico.getText(), jt_usernuevoartista.getText(), jp_nuevaclaveartista.getText(), (Integer) js_edadnuevoartista.getValue()));
                 jt_usernuevoartista.setText("");
                 jp_nuevaclaveartista.setText("");
                 js_edadnuevoartista.setValue(18);
                 jt_nombreArtistico.setText("");
                 jd_tipoartista.setVisible(false);
                 jD_elegirtipo.setVisible(false);
+                try {
+                    adminuser.Escribirarchivo();
+                } catch (IOException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JOptionPane.showMessageDialog(jd_tipoartista, "Se ha creado el artista exitosamente");
             } else {
                 JOptionPane.showMessageDialog(jd_tipoartista, "Ya alguien tiene ese usuario", "ERROR FAMI", 2);
@@ -575,11 +844,17 @@ public class Main extends javax.swing.JFrame {
             }
             if (puede) {
                 usuarios.add(new Oyente(jt_usernuevooyente.getText(), jp_nuevaclaveoyente.getText(), (Integer) js_edadnuevooyente.getValue()));
+                adminuser.getListausers().add(new Oyente(jt_usernuevooyente.getText(), jp_nuevaclaveoyente.getText(), (Integer) js_edadnuevooyente.getValue()));
                 jt_usernuevooyente.setText("");
                 jp_nuevaclaveoyente.setText("");
                 js_edadnuevooyente.setValue(12);
                 jd_tipooyente.setVisible(false);
                 jD_elegirtipo.setVisible(false);
+                try {
+                    adminuser.Escribirarchivo();
+                } catch (IOException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JOptionPane.showMessageDialog(jd_tipooyente, "Se ha creado exitosamente el oyente");
             } else {
                 JOptionPane.showMessageDialog(jd_tipooyente, "Ya alguien tiene ese usuario", "ERROR FAMI", 2);
@@ -603,22 +878,20 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         boolean entra = false;
-        int copiai=0;
+        copiai = 0;
         if (usuarios.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay ni un usuario", "ERROR FAMI", 2);
-        }else{
+        } else {
             for (int i = 0; i < usuarios.size(); i++) {
                 if (jt_username.getText().equals(usuarios.get(i).getUsername())) {
-                      if (jp_contra.getText().equals(usuarios.get(i).getContra())){
+                    if (jp_contra.getText().equals(usuarios.get(i).getContra())) {
                         entra = true;
                         copiai = i;
-                        i = usuarios.size()+60;
-                    }else{
+                        i = usuarios.size() + 60;
+                    } else {
                         JOptionPane.showMessageDialog(this, "Contraseña invalida", "ERROR FAMI", 2);
                         entra = false;
-                      }
-                }else{
-                    JOptionPane.showMessageDialog(this, "Usuario Invalido", "ERROR FAMI", 2);
+                    }
                 }
             }
             if (entra) {
@@ -626,9 +899,9 @@ public class Main extends javax.swing.JFrame {
                 jp_contra.setText("");
                 this.setVisible(false);
                 if (usuarios.get(copiai) instanceof Artista) {
-                    DefaultTreeModel modelo = (DefaultTreeModel)jt_lanzas.getModel();
+                    DefaultTreeModel modelo = (DefaultTreeModel) jt_lanzas.getModel();
                     DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
-                    for (Album a : ((Artista)(usuarios.get(copiai))).getAlbumespubblicados()) {
+                    for (Album a : ((Artista) (usuarios.get(copiai))).getAlbumespubblicados()) {
                         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(a);
                         for (Cancion c : a.getCanciones()) {
                             DefaultMutableTreeNode cc = new DefaultMutableTreeNode(c);
@@ -636,17 +909,96 @@ public class Main extends javax.swing.JFrame {
                         }
                         raiz.add(nodo);
                     }
+                    nombreuserart.setText(usuarios.get(copiai).getUsername());
+                    nombreart.setText(((Artista) (usuarios.get(copiai))).getNombreartistica());
+                    contraart.setText(usuarios.get(copiai).getContra());
+                    edadart.setText("" + usuarios.get(copiai).getEdad());
                     jf_artistinicio.setVisible(true);
                     jf_artistinicio.setLocationRelativeTo(this);
-                    
-                }else{
+
+                } else {
+                    nombreuseroy.setText(usuarios.get(copiai).getUsername());
+                    contraoy.setText(usuarios.get(copiai).getContra());
+                    edadoy.setText("" + usuarios.get(copiai).getEdad());
                     jf_clienteinicio.setVisible(true);
                     jf_clienteinicio.setLocationRelativeTo(this);
                 }
+            }else{
+                    JOptionPane.showMessageDialog(this, "Usuario Invalido", "ERROR FAMI", 2);
+                
             }
         }
-        
+
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        usuarios.remove(copiai);
+        adminuser.getListausers().remove(copiai);
+        jf_clienteinicio.setVisible(false);
+        this.setVisible(true);
+        try {
+            adminuser.Escribirarchivo();
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JOptionPane.showMessageDialog(this, "Se ha borrado el usuario y se ha cerrado sesion");
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        copiai = 0;
+        jf_artistinicio.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void nombreuseroyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreuseroyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreuseroyActionPerformed
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        copiai = 0;
+        jf_clienteinicio.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        mod.pack();
+        mod.setModal(true);
+        mod.setLocationRelativeTo(jf_clienteinicio);
+        mod.setVisible(true);
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void nombrenuvoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrenuvoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombrenuvoActionPerformed
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        
+        if (nombrenuvo.getText().isBlank()) {
+        } else {
+            usuarios.get(copiai).setUsername(nombrenuvo.getText());
+            adminuser.getListausers().get(copiai).setUsername(usuarios.get(copiai).getUsername());
+        }
+        if (contranueva.getText().isBlank()) {
+        } else {
+            usuarios.get(copiai).setContra(contranueva.getText());
+            adminuser.getListausers().get(copiai).setContra(contranueva.getText());
+        }
+        if ((Integer) edadnueva.getValue() < 12) {
+            JOptionPane.showMessageDialog(jf_clienteinicio, "La edad debe ser mayor a 12, se quedara con la anterior", "ERROR EDAD", 2);
+        } else {
+            usuarios.get(copiai).setEdad((Integer) edadnueva.getValue());
+            adminuser.getListausers().get(copiai).setEdad((Integer) edadnueva.getValue());
+        }
+        nombreuseroy.setText(usuarios.get(copiai).getUsername());
+        contraoy.setText(usuarios.get(copiai).getContra());
+        edadoy.setText("" + usuarios.get(copiai).getEdad());
+        mod.setVisible(false);
+        try {
+            adminuser.Escribirarchivo();
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -684,16 +1036,41 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField contraart;
+    private javax.swing.JPasswordField contranueva;
+    private javax.swing.JPasswordField contraoy;
+    private javax.swing.JTextField edadart;
+    private javax.swing.JSpinner edadnueva;
+    private javax.swing.JTextField edadoy;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JDialog jD_elegirtipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -705,6 +1082,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -714,8 +1094,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton jb_artista;
     private javax.swing.JButton jb_oyente;
     private javax.swing.JButton jb_registrarse;
@@ -733,5 +1117,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jt_username;
     private javax.swing.JTextField jt_usernuevoartista;
     private javax.swing.JTextField jt_usernuevooyente;
+    private javax.swing.JDialog mod;
+    private javax.swing.JTextField nombreart;
+    private javax.swing.JTextField nombrenuvo;
+    private javax.swing.JTextField nombreuserart;
+    private javax.swing.JTextField nombreuseroy;
     // End of variables declaration//GEN-END:variables
 }
