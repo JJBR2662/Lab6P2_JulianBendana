@@ -10,7 +10,7 @@ class Album extends Lanzamiento{
     public Album() {
     }
 
-    public Album(int id, int cantidadcanciones, String titulo, Date fechalanzamiento, int conteolikes) {
+    public Album(int id, int cantidadcanciones, String titulo, String fechalanzamiento, int conteolikes) {
         super(titulo, fechalanzamiento, conteolikes);
         this.id = id;
         this.cantidadcanciones = cantidadcanciones;

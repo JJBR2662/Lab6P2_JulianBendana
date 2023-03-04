@@ -1,8 +1,14 @@
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author bayer
@@ -12,8 +18,13 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
+    AdministrarUsuario adminuser = new AdministrarUsuario("./usuarios.txt");
+
+    ArrayList<Usuario> usuarios = new ArrayList();
+
     public Main() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,7 +43,26 @@ public class Main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jd_tipoartista = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jt_usernuevoartista = new javax.swing.JTextField();
+        jt_nombreArtistico = new javax.swing.JTextField();
+        js_edadnuevoartista = new javax.swing.JSpinner();
+        jp_nuevaclaveartista = new javax.swing.JPasswordField();
+        jButton2 = new javax.swing.JButton();
         jd_tipooyente = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jt_usernuevooyente = new javax.swing.JTextField();
+        jp_nuevaclaveoyente = new javax.swing.JPasswordField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        js_edadnuevooyente = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -56,6 +86,11 @@ public class Main extends javax.swing.JFrame {
         jb_oyente.setBackground(new java.awt.Color(0, 204, 0));
         jb_oyente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jb_oyente.setText("Oyente");
+        jb_oyente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_oyenteMouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 204, 0));
@@ -101,37 +136,144 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Nuevo Artista");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 20, 213, 53));
+
+        jLabel6.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Username:");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 91, 99, 36));
+
+        jLabel7.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("Edad:");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 145, 99, 36));
+
+        jLabel8.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("Contraseña:");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 199, 99, 36));
+
+        jLabel9.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("Nombre Artistico:");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 253, -1, 36));
+
+        jt_usernuevoartista.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel3.add(jt_usernuevoartista, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 91, 202, 36));
+
+        jt_nombreArtistico.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel3.add(jt_nombreArtistico, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 254, 202, 36));
+
+        js_edadnuevoartista.setValue(18);
+        jPanel3.add(js_edadnuevoartista, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 145, 89, 36));
+
+        jp_nuevaclaveartista.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel3.add(jp_nuevaclaveartista, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 199, 202, 36));
+
+        jButton2.setBackground(new java.awt.Color(0, 204, 0));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton2.setText("Crear Cuenta");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 308, 202, 51));
 
         javax.swing.GroupLayout jd_tipoartistaLayout = new javax.swing.GroupLayout(jd_tipoartista.getContentPane());
         jd_tipoartista.getContentPane().setLayout(jd_tipoartistaLayout);
         jd_tipoartistaLayout.setHorizontalGroup(
             jd_tipoartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
         );
         jd_tipoartistaLayout.setVerticalGroup(
             jd_tipoartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
         );
+
+        jd_tipooyente.setPreferredSize(new java.awt.Dimension(602, 467));
+        jd_tipooyente.setSize(new java.awt.Dimension(602, 467));
+
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel4.setPreferredSize(new java.awt.Dimension(602, 467));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton3.setBackground(new java.awt.Color(0, 204, 0));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton3.setText("Crear Cuenta");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 202, 51));
+
+        jLabel10.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Nuevo Oyente");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 20, 213, 53));
+
+        jt_usernuevooyente.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel4.add(jt_usernuevooyente, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 91, 202, 36));
+
+        jp_nuevaclaveoyente.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel4.add(jp_nuevaclaveoyente, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 199, 202, 36));
+
+        jLabel11.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel11.setText("Contraseña:");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 199, 99, 36));
+
+        jLabel12.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("Edad:");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 145, 99, 36));
+
+        jLabel13.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel13.setText("Username:");
+        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 91, 99, 36));
+
+        js_edadnuevooyente.setValue(12);
+        jPanel4.add(js_edadnuevooyente, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 145, 89, 36));
 
         javax.swing.GroupLayout jd_tipooyenteLayout = new javax.swing.GroupLayout(jd_tipooyente.getContentPane());
         jd_tipooyente.getContentPane().setLayout(jd_tipooyenteLayout);
         jd_tipooyenteLayout.setHorizontalGroup(
             jd_tipooyenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_tipooyenteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jd_tipooyenteLayout.setVerticalGroup(
             jd_tipooyenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_tipooyenteLayout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -168,11 +310,21 @@ public class Main extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 204, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("Iniciar Sesion");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 150, 40));
 
         jb_registrarse.setBackground(new java.awt.Color(0, 204, 0));
         jb_registrarse.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jb_registrarse.setText("Registrarse");
+        jb_registrarse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_registrarseMouseClicked(evt);
+            }
+        });
         jPanel1.add(jb_registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -192,8 +344,109 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_artistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_artistaMouseClicked
-        
+        jd_tipoartista.pack();
+        jd_tipoartista.setModal(true);
+        jd_tipoartista.setLocationRelativeTo(jD_elegirtipo);
+        jd_tipoartista.setVisible(true);
     }//GEN-LAST:event_jb_artistaMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        if (jt_usernuevoartista.getText().isBlank() || jp_nuevaclaveartista.getText().isBlank() || (Integer) js_edadnuevoartista.getValue() < 18 || jt_nombreArtistico.getText().isBlank()) {
+            JOptionPane.showMessageDialog(rootPane, "Hay minimo algo en blanco o la edad es menor de 18", "ERROR FAMI", 2);
+        } else {
+            boolean puede2 = true;
+            for (int i = 0; i < usuarios.size(); i++) {
+                if (jt_usernuevoartista.getText().equals(usuarios.get(i).getUsername())) {
+                    puede2 = false;
+                    i = usuarios.size() + 454;
+                } else {
+                    puede2 = true;
+                }
+            }
+            if (puede2) {
+                usuarios.add(new Artista(jt_nombreArtistico.getText(), jt_usernuevoartista.getText(), jp_nuevaclaveartista.getText(), (Integer) js_edadnuevoartista.getValue()));
+                jt_usernuevoartista.setText("");
+                jp_nuevaclaveartista.setText("");
+                js_edadnuevoartista.setValue(18);
+                jt_nombreArtistico.setText("");
+                jd_tipoartista.setVisible(false);
+                jD_elegirtipo.setVisible(false);
+                JOptionPane.showMessageDialog(jd_tipoartista, "Se ha creado el artista exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(jd_tipoartista, "Ya alguien tiene ese usuario", "ERROR FAMI", 2);
+            }
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        if (jt_usernuevooyente.getText().isBlank() || jp_nuevaclaveoyente.getText().isBlank() || (Integer) js_edadnuevooyente.getValue() < 12) {
+            JOptionPane.showMessageDialog(rootPane, "Hay minimo algo en blanco o la edad es menor de 12", "ERROR FAMI", 2);
+        } else {
+            boolean puede = true;
+            for (int i = 0; i < usuarios.size(); i++) {
+                if (jt_usernuevooyente.getText().equals(usuarios.get(i).getUsername())) {
+                    puede = false;
+                    i = usuarios.size() + 50000;
+                } else {
+                    puede = true;
+                }
+            }
+            if (puede) {
+                usuarios.add(new Oyente(jt_usernuevooyente.getText(), jp_nuevaclaveoyente.getText(), (Integer) js_edadnuevooyente.getValue()));
+                jt_usernuevooyente.setText("");
+                jp_nuevaclaveoyente.setText("");
+                js_edadnuevooyente.setValue(12);
+                jd_tipooyente.setVisible(false);
+                jD_elegirtipo.setVisible(false);
+                JOptionPane.showMessageDialog(jd_tipooyente, "Se ha creado exitosamente el oyente");
+            } else {
+                JOptionPane.showMessageDialog(jd_tipooyente, "Ya alguien tiene ese usuario", "ERROR FAMI", 2);
+            }
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jb_registrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_registrarseMouseClicked
+        jD_elegirtipo.pack();
+        jD_elegirtipo.setModal(true);
+        jD_elegirtipo.setLocationRelativeTo(this);
+        jD_elegirtipo.setVisible(true);
+    }//GEN-LAST:event_jb_registrarseMouseClicked
+
+    private void jb_oyenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_oyenteMouseClicked
+        jd_tipooyente.pack();
+        jd_tipooyente.setModal(true);
+        jd_tipooyente.setLocationRelativeTo(jD_elegirtipo);
+        jd_tipooyente.setVisible(true);
+    }//GEN-LAST:event_jb_oyenteMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        boolean entra = false;
+        int copiai=0;
+        if (usuarios.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay ni un usuario", "ERROR FAMI", 2);
+        }else{
+            for (int i = 0; i < usuarios.size(); i++) {
+                if (jt_username.getText().equals(usuarios.get(i).getUsername())) {
+                      if (jp_contra.getText().equals(usuarios.get(i))){
+                        entra = true;
+                        copiai = i;
+                        i = usuarios.size()+60;
+                    }else{
+                        JOptionPane.showMessageDialog(this, "Contraseña invalida", "ERROR FAMI", 2);
+                        entra = false;
+                      }
+                }else{
+                    JOptionPane.showMessageDialog(this, "Usuario Invalido", "ERROR FAMI", 2);
+                }
+            }
+            if (entra) {
+                if (usuarios.get(copiai) instanceof Oyente) {
+                    
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -232,20 +485,39 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JDialog jD_elegirtipo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JButton jb_artista;
     private javax.swing.JButton jb_oyente;
     private javax.swing.JButton jb_registrarse;
     private javax.swing.JDialog jd_tipoartista;
     private javax.swing.JDialog jd_tipooyente;
     private javax.swing.JPasswordField jp_contra;
+    private javax.swing.JPasswordField jp_nuevaclaveartista;
+    private javax.swing.JPasswordField jp_nuevaclaveoyente;
+    private javax.swing.JSpinner js_edadnuevoartista;
+    private javax.swing.JSpinner js_edadnuevooyente;
+    private javax.swing.JTextField jt_nombreArtistico;
     private javax.swing.JTextField jt_username;
+    private javax.swing.JTextField jt_usernuevoartista;
+    private javax.swing.JTextField jt_usernuevooyente;
     // End of variables declaration//GEN-END:variables
 }

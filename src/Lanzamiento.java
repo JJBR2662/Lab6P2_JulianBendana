@@ -3,13 +3,13 @@ import java.util.Date;
 
 public class Lanzamiento {
     protected String titulo;
-    protected Date fechalanzamiento;
+    protected String fechalanzamiento;
     protected int conteolikes;
 
     public Lanzamiento() {
     }
 
-    public Lanzamiento(String titulo, Date fechalanzamiento, int conteolikes) {
+    public Lanzamiento(String titulo, String fechalanzamiento, int conteolikes) {
         this.titulo = titulo;
         this.fechalanzamiento = fechalanzamiento;
         this.conteolikes = conteolikes;
@@ -23,11 +23,11 @@ public class Lanzamiento {
         this.titulo = titulo;
     }
 
-    public Date getFechalanzamiento() {
+    public String getFechalanzamiento() {
         return fechalanzamiento;
     }
 
-    public void setFechalanzamiento(Date fechalanzamiento) {
+    public void setFechalanzamiento(String fechalanzamiento) {
         this.fechalanzamiento = fechalanzamiento;
     }
 
